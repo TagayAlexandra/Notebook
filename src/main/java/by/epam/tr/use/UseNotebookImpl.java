@@ -5,6 +5,7 @@ import by.epam.tr.port.UseNotebook;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class UseNotebookImpl implements UseNotebook {
 
@@ -14,13 +15,13 @@ public class UseNotebookImpl implements UseNotebook {
     }
 
     @Override
-    public void addNewNote(Note note, ArrayList<Note> notes) {
+    public void addNewNote(Note note, List<Note> notes) {
         notes.add(note);
 
     }
 
     @Override
-    public Note searchNoteByDate(LocalDate date, ArrayList<Note> notes) {
+    public Note searchNoteByDate(LocalDate date, List<Note> notes) {
         for (Note elementNotes : notes) {
             if (elementNotes.getDateAddNote().isEqual(date)) {
                 return elementNotes;
@@ -30,7 +31,7 @@ public class UseNotebookImpl implements UseNotebook {
     }
 
     @Override
-    public Note searchNoteByContent(String note, ArrayList<Note> notes) {
+    public Note searchNoteByContent(String note, List<Note> notes) {
         for (Note elementNotes : notes) {
             if (elementNotes.getNote().equals(note)) {
                 return elementNotes;
@@ -40,7 +41,7 @@ public class UseNotebookImpl implements UseNotebook {
     }
 
     @Override
-    public void removesNote(Note note, ArrayList<Note> notes) {
+    public void removesNote(Note note, List<Note> notes) {
         notes.remove(note);
     }
 }

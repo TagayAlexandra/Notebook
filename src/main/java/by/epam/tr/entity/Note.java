@@ -1,6 +1,7 @@
 package by.epam.tr.entity;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Note {
     private String note;
@@ -25,6 +26,19 @@ public class Note {
 
     public void setDateAddNote(LocalDate dateAddNote) {
         this.dateAddNote = dateAddNote;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Note note1 = (Note) o;
+        return Objects.equals(note, note1.note) && Objects.equals(dateAddNote, note1.dateAddNote);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(note, dateAddNote);
     }
 
     @Override
