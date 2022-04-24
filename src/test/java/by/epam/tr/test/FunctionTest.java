@@ -28,8 +28,7 @@ public class FunctionTest {
     @Test
     public void verifyCreateNote() {
         Note note = useNotebook.createNote("Note");
-        boolean expected = note != null;
-        Assertions.assertTrue(expected);
+        Assertions.assertNotNull(note, "Type must not be null");
     }
 
 
