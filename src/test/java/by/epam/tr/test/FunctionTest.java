@@ -21,8 +21,8 @@ public class FunctionTest {
 
     @BeforeAll
     public void setUp() {
-        note = new Note("Hello", LocalDate.now());
-        note1 = new Note("Bye", LocalDate.now());
+        note = useNotebook.createNote("Hello");
+        note1 = useNotebook.createNote("Bye");
     }
 
     @Test
